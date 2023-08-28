@@ -1,0 +1,36 @@
+﻿<Page
+    x:Class="mapa.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:Maps="using:Windows.UI.Xaml.Controls.Maps"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.RowDefinitions >
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" HorizontalAlignment="Left">
+            <TextBlock Text="Nawigator" FontSize="35" Margin="5" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="0"/>
+            <TextBlock x:Name="strona" Margin="5" FontSize="25" Text="Mapa" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+        </StackPanel>
+        <Maps:MapControl x:Name="mojaMapa" MapServiceToken="" Grid.Row="1"/>
+        <StackPanel Grid.Row="2" HorizontalAlignment="Center" Orientation="Horizontal">
+            <AppBarButton x:Name="pow" Icon="Add" Label="powiększ" Click="pow_Click"/>
+            <AppBarButton x:Name="pom" Icon="Remove" Label="pomniejsz" Click="pom_Click"/>
+            <AppBarButton x:Name="tryb" Label="drogowa" Click="tryb_Click">
+                <AppBarButton.Icon >
+                    <FontIcon Glyph="D" FontFamily="auto"/>
+                </AppBarButton.Icon>
+            </AppBarButton>
+            <AppBarSeparator />
+            <AppBarButton Icon="Globe" Label="koordynaty" x:Name="koor" Click="koor_Click"/>
+            <AppBarButton x:Name="trasa" Icon="Directions" Label="trasa" Click="trasa_Click"/>
+        </StackPanel>
+
+    </Grid>
+</Page>
